@@ -1,0 +1,56 @@
+// ***********************************
+// VARIABLES
+// ***********************************
+
+@import url('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+@import url('https://fonts.googleapis.com/css?family=Gentium+Basic:400i');
+
+
+
+// LAYOUT
+$mobile-width: 420px;
+$tablet-width: 640px;
+$tablet-wide-width: 760px;
+$laptop-width: 920px;
+$desktop-width: 1024px;
+$wide-width: 1200px;
+
+
+
+
+// TYPOGRAPHY
+$font-size: 16px;
+$font-sans: 'Gotham A', 'Gotham B', sans-serif;//'Lato', sans-serif;//
+$font-serif: 'Gentium Basic', serif;
+$font-weight: 300;
+$line-height: 1.375;//1.625;
+$font-size-mobile: 12px;
+$line-height-mobile: 1.625;
+
+
+
+
+// COLORS
+$col-white: #fff;
+$col-grey-xl: #ccc;
+$col-grey-l: #999;
+$col-grey: #666;
+$col-grey-d: #333;
+$col-black: #000;
+$col-orange: #e69224;
+
+
+
+
+
+// Other
+$border-radius: 5px;
+
+
+
+
+// $themes: (
+  // value1: $col-1,
+  // value2: $col-2
+// ) !default;
+

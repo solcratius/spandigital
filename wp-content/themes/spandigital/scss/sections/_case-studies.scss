@@ -1,0 +1,325 @@
+// ***********************************
+// SECTIONS IN CASE STUDIES
+// ***********************************
+
+body #contents.case-study section {
+
+	&.hero {
+		.wrapper.align-left {
+    		text-align: center;
+    		@include breakpoint($tablet-width) { text-align: left; }
+    	}
+	}
+
+	&.case-highlights {
+		min-height: auto;
+
+		.col {
+			display: block;
+			width: 100%;
+			text-align: left;
+
+			&:last-child { margin-top: 1.875rem; }
+
+			@include breakpoint($tablet-wide-width) {
+				display: table-cell;
+				width: 34%;
+				vertical-align: middle;
+
+				&:last-child {
+					width: auto;
+					margin-top: 0;
+				}
+			}
+
+			ul {
+				@extend %no-style-list;
+
+				li {
+					font-size: 1.125rem;
+					margin: .625rem 0;
+				}
+			}
+
+			&.headline {
+				color: $col-grey;
+				font-size: 1.75rem;
+				font-weight: 100;
+				line-height: 2.1rem;
+				text-transform: uppercase;
+
+				@include breakpoint($tablet-wide-width) { text-align: right; }
+			}
+
+			h4 {
+				display: block;
+				text-align: inherit;
+				font-size: 3.875rem;
+				font-weight: 100;
+				margin-bottom: .625rem;
+				// @include breakpoint($tablet-width) { font-size: 2.5em; }
+			}
+
+			h5 {
+				display: block;
+				margin: .625em 0 0;
+				font-weight: 400;
+				text-align: inherit;
+			}
+
+			p {
+				display: block;
+				text-align: left;
+				// font-size: 1.375em;
+				font-size: 1.335em;
+
+				&:first-child {
+					margin-top: 0;
+					margin-bottom: 1.5em;
+				}
+			}
+		}
+
+		.divider {
+			display: none;
+
+			@include breakpoint($tablet-wide-width) {
+				display: table-cell;
+				width: 22%;
+				vertical-align: middle;
+
+				&:before {
+					position: absolute;
+					content: " ";
+					width: 240px;
+					height: 1px;
+					margin-top: 0;
+					margin-left: -120px;
+					background-color: $col-grey-xl;
+					transform: rotate(-62deg);
+				}
+			}
+
+			@include breakpoint($desktop-width) {
+				width: 18%;
+
+				&:before {
+					width: 190px;
+					margin-top: 5px;
+					margin-left: -95px;
+				}
+			}
+		}
+	}
+
+
+	&.case-body, &.case-results {
+
+		.col {
+			display: block;
+			width: 100%;
+			text-align: left;
+
+			&:last-child {
+				margin-top: 1.875rem;
+				padding-left: 0;
+			}
+
+			@include breakpoint($tablet-wide-width) {
+				display: table-cell;
+				width: 34%;
+				vertical-align: middle;
+
+				&:last-child {
+					width: auto;
+					margin-top: 0;
+					padding-left: 10%;
+				}
+			}
+			
+			ul {
+				@extend %no-style-list;
+
+				li {
+					font-size: 1.125rem;
+					margin: .625rem 0;
+				}
+			}
+
+			&.headline {
+				color: $col-grey;
+				// font-size: 1.75rem;
+				// line-height: 2.1rem;
+				font-size: 1.375rem;
+				font-weight: 100;
+				line-height: 1.85rem;
+				text-transform: uppercase;
+
+				@include breakpoint($tablet-wide-width) { text-align: right; }
+			}
+
+			.sub-section {
+				margin: 3.75rem 0;
+
+				&:first-child { margin-top: 0; }
+				&:last-child { margin-bottom: 0; }
+			}
+
+			.body-mobileOnly {
+				display: block;
+				text-transform: none;
+				margin-bottom: 3.75rem;
+
+				@include breakpoint($tablet-wide-width) { display: none; }
+			}
+
+			.body-desktopOnly {
+				display: none;
+				@include breakpoint($tablet-wide-width) { display: block; }
+			}
+
+			span.bar {
+				display: inline-block;
+				width: 70%;
+				height: 5px;
+				margin-bottom: 1.375rem;
+				border-top: 3px solid $col-orange;
+
+				@include breakpoint($tablet-width) {
+					width: 55%;
+					border-top: 4px solid $col-orange;
+				}
+				@include breakpoint($tablet-wide-width) {
+					width: 100%;
+					margin-bottom: 1.875rem;
+					border-top: 5px solid $col-orange;
+				}
+				@include breakpoint($laptop-width) { width: 80%; }
+			}
+
+			h3 {
+				display: block;
+				font-size: 2.875rem;
+				font-weight: 100;
+				margin-bottom: .625rem;
+				text-transform: none;
+				// @include breakpoint($tablet-width) { font-size: 2.5em; }
+			}
+
+			h5 {
+				display: block;
+				margin: .625em 0 0;
+				font-weight: 400;
+				text-align: inherit;
+			}
+
+			p {
+				display: block;
+				text-align: left;
+				// font-size: 1.375em;
+				font-size: 1rem;
+				line-height: 1.6rem;
+
+				&:first-child {
+					margin-top: 0;
+					margin-bottom: 1.5em;
+				}
+			}
+		}
+	}
+
+	&.case-studies {
+		ul {
+			@extend %no-style-list;
+
+			margin: 3.4375rem 1.25rem 0;
+
+
+			@include breakpoint($laptop-width) {
+				margin: 3.4375rem 0 0;
+			}
+
+			li {
+				position: relative;
+				display: block;
+				height: auto;
+				background-color: $col-orange;
+				font-size: 0;
+				margin: .9375rem 0;
+				overflow: auto;
+
+				a {
+					position: relative;
+					display: block;
+					height: 100%;
+					margin: 0;
+					padding: 0;
+				}
+
+				@include breakpoint($laptop-width) {
+					display: inline-block;
+					width: 48%;
+					width: calc(50% - 2rem);
+					height: 15.625rem;
+					margin: 0 1rem;
+					font-size: 1.125rem;
+					overflow: hidden;
+				}
+
+				img {
+					position: relative;
+					width: 100%;
+					height: auto;
+
+					@include breakpoint($laptop-width) {
+						width: auto;
+						height: 100%;
+					}
+				}
+
+				h3 {
+					position: absolute;
+					font-size: 2.3333rem;
+					font-weight: 300;
+					letter-spacing: 1pt;
+					color: $col-white;
+					left: 1.875rem;
+					bottom: 3.8125rem;
+
+					@include breakpoint($tablet-width) { font-size: 2.875rem; }
+				}
+
+				span {
+					position: absolute;
+					font-size: 1rem;
+					font-weight: 400;
+					text-transform: uppercase;
+					letter-spacing: .5pt;
+					color: $col-orange;
+					left: 1.875rem;
+					bottom: 1.5rem;
+
+					@include breakpoint($tablet-width) { font-size: 1.125rem; }
+				}
+			}
+		}
+	}
+}
+
+.noTouch {
+	body #contents.case-study section {
+		&.case-studies ul li {
+			img { @include trans(.25s, opacity); }
+			span { @include trans(.25s, color); }
+
+			&:hover {
+				img { opacity: .5; }
+				span { color: $col-black; }
+			}
+		}
+	}
+}
+
+.noResize {
+
+}

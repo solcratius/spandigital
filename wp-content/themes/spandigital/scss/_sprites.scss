@@ -1,0 +1,91 @@
+
+$spriteSVG: url("images/sprite.svg");
+$spritePNG: url("images/sprite.png");
+
+%sprite-div {
+	display: inline-block;
+	background: $spritePNG;
+	background: $spriteSVG,
+    linear-gradient(transparent, transparent);
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+
+
+.sprite-logo {
+	@extend %sprite-div;
+	position: relative;
+	background-position: -180px 0;
+	width: 87px;
+	height: 22px;
+
+	@include breakpoint($tablet-width) {
+		background-position: 0 0;
+		width: 172px;
+		height: 42px;
+	}
+}
+
+#header.orange-bg .sprite-logo {
+	background-position: -180px -24px;
+
+	@include breakpoint($tablet-width) {
+	    background-position: 0 -42px;
+	}
+}
+
+#header.sticky-nav .sprite-logo {
+	background-position: -180px -24px;
+
+	@include breakpoint($tablet-width) {
+	    background-position: 0 -42px;
+	}
+}
+
+
+
+
+.sprite-quote {
+	@extend %sprite-div;
+	position: relative;
+	background-position: -275px 0;
+	width: 42px;
+	height: 42px;
+
+	@include breakpoint($tablet-width) {
+		background-position: -320px 0;
+		width: 78px;
+		height: 78px;
+	}
+}
+
+
+
+
+.sprite-fb {
+	@extend %sprite-div;
+	background-position: -182px -49px;
+	// background-position: -195px -53px;
+	// width: 16px; 38
+	// height: 31px; 38
+}
+
+.sprite-tw {
+	@extend %sprite-div;
+	background-position: -227px -50px;
+	// background-position: -230px -57px;
+	// width: 32px;
+	// height: 26px;
+}
+
+.sprite-in {
+	@extend %sprite-div;
+	background-position: -272px -50px;
+	// background-position: -275px -54px;
+	// width: 32px;
+	// height: 30px;
+}

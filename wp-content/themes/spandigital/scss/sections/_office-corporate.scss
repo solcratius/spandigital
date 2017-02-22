@@ -1,0 +1,77 @@
+// ***************************************************
+// OFFICE GALLERY & CORPORATE INITIATIVES SECTIONS
+// ***************************************************
+
+body #contents section#office-gallery {
+	padding: 5rem 0 3rem;
+	@include breakpoint($tablet-width) { padding: 4.375rem 0 2.5rem; }
+
+	@include breakpoint($tablet-width) {
+		padding-bottom: 1rem;
+	}
+}
+
+body #contents section#corporate-initiatives {
+	padding: 5rem 0 3rem;
+	@include breakpoint($tablet-width) { padding: 4.375rem 0 2.5rem; }
+
+	&:before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+
+	.wrapper {
+		&.col-2 {
+			display: none;
+			width: 100%;
+			max-width: auto;
+			padding: 0;
+		}
+		&.col-2.all {
+			display: inline-block;
+			margin: 0 auto;
+			max-width: 560px;
+		}
+
+		@include breakpoint($desktop-width) {
+			display: none;
+			text-align: left;
+
+			&.col-2,
+			&.col-2.all {
+				display: inline-block;
+				width: 53.3333%;
+				max-width: 640px;
+				vertical-align: middle;
+				padding: 0 3rem 2rem 4.25rem;
+			}
+
+			&.col-2.all {
+				width: 46.6667%;
+				max-width: 560px;
+				padding: 0;
+				margin: 0;
+
+				.container {
+					text-align: center;
+					margin: 0;
+				}
+			}
+		}
+		
+	}
+}
+
+.noTouch {
+	body #contents section#corporate-initiatives {
+
+	}
+}
+
+.noResize {
+	body #contents section#corporate-initiatives {
+
+	}
+}

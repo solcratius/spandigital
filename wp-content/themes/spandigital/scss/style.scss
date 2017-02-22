@@ -1,0 +1,58 @@
+/******************************************************************
+Theme Name: Span Digital
+Theme URI: http://www.spandigital.com
+Description: 
+Author: James Sol
+Author URI: www.omnikreation.com
+Version: 1.1
+Tags: 
+*****************************************************************/
+
+// ***********************************
+// IMPORTS
+// Import susy, breakpoint, resets and grids
+// ***********************************
+
+@import '../bower_components/susy/sass/_susy';
+@import '../bower_components/breakpoint-sass/stylesheets/_breakpoint';
+@import "reset";
+
+
+// ***********************************
+// HELPERS
+// ***********************************
+@import "variables";
+@import "mixins";
+@import "layout";
+@import "slick";
+
+// ***********************************
+// BASE STYLES
+// ***********************************
+@import "base";
+@import "sprites";
+
+// ***********************************
+// SECTIONS
+// ***********************************	
+@import "sections/404";
+@import "sections/header";
+@import "sections/footer";
+@import "sections/hero";
+@import "sections/quotes";
+@import "sections/capabilities";
+@import "sections/work";
+@import "sections/leadership";
+@import "sections/careers";
+@import "sections/global-hub";
+@import "sections/beliefs";
+@import "sections/opening";
+@import "sections/office-corporate";
+
+@import "sections/case-studies";
+
+
+// body { margin-top: -32px; }
+#wpadminbar { display: none; }
+// html { margin-top: 0 !important; }
+

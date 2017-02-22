@@ -1,0 +1,258 @@
+// ***********************************
+// BASE
+// ***********************************
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: $font-sans;
+	font-size: $font-size-mobile;
+	line-height: $line-height-mobile;
+	font-weight: $font-weight;
+	-webkit-font-smoothing: antialiased;
+
+	@include breakpoint($tablet-width) {
+		font-size: $font-size;
+		line-height: $line-height;
+	}
+}
+
+*, *:before, *:after {
+	// -moz-box-sizing: border-box;
+	// -webkit-box-sizing: border-box;
+	box-sizing: border-box; 
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+body {
+	background: $col-white;
+	// background: $col-orange;
+	
+	&.home { background: $col-grey; }
+	color: $col-grey;
+	// -webkit-tap-highlight-color: rgba(0,0,0,0);
+	overflow-x: hidden;
+	// overflow-y: scroll;
+	// -webkit-overflow-scrolling: none;
+	
+	&.lock-scroll {
+		overflow: hidden;
+	}
+}
+
+#contents {
+	background: $col-white;
+
+	section {
+		position: relative;
+		width: 100%;
+		min-height: 320px;
+		padding: 5rem 0;
+		outline: none;
+		text-align: center;
+
+		&.grey-l { background-color: #f8f7f7; }
+		&.grey { background-color: $col-grey-l; }
+		&.grey-d { background-color: $col-grey; }
+		&.black { background-color: $col-black; }
+		&.orange { background-color: $col-orange; }
+
+		@include breakpoint($tablet-width) {
+			min-height: 410px;
+			// padding: 5rem 0;
+			padding: 4.375rem 0;
+		}
+
+		h4 { color: $col-orange; }
+
+		&.grey-d, &.black, &.orange {
+			h2, h4, p { color: $col-white; }
+		}
+	}
+
+	&.home section:nth-child(2) {
+		@include breakpoint($tablet-width) {
+			padding-top: 6.875rem;
+		}
+	}
+}
+
+// ***********************************
+// DEFAULTS
+// ***********************************
+
+h2, h3, h4, h5, h6 {
+	font-weight: 300;
+	line-height: 1.15em;
+	margin: 0;
+}
+
+h2 {
+	font-size: 2.6667rem;
+	letter-spacing: -1pt;
+	text-transform: uppercase;
+
+	@include breakpoint($tablet-width) { font-size: 3.875rem; }
+
+	&.small {
+		font-size: 2.25rem;
+		@include breakpoint($tablet-width) { font-size: 3.25rem; }
+	}
+
+	&.smaller {
+		font-size: 2.25rem;
+		@include breakpoint($tablet-width) { font-size: 3rem; }
+	}
+}
+
+h3 {
+	font-size: 2.875rem;
+}
+
+h4 {
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
+h5 {
+	font-size: 1.625rem;//1.4em;
+	font-weight: 400;
+}
+
+h6 {
+	font-size: 1.25rem;
+	font-weight: 400;
+}
+
+p {
+	font-size: 1.375rem;
+	font-weight: 300;
+}
+
+p.small {
+	font-size: 1.125rem;
+	font-weight: 300;
+}
+
+p.smaller {
+	font-size: 1rem;
+	font-weight: 300;
+}
+
+p.smallest {
+	font-size: .875rem;
+	font-weight: 300;
+}
+
+a, a:visited, a:active {
+	font-family: $font-sans;
+	font-weight: 400;
+	letter-spacing: .5pt;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+
+ul li {
+	list-style: inside;
+}
+
+%no-style-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+
+	li {
+		list-style: none;
+	}
+}
+
+.fa {
+	font-family: FontAwesome !important;
+}
+
+.add-paddingTop {
+	padding-top: 50px !important;
+
+	@include breakpoint($tablet-wide-width) {
+		padding-top: 40px !important;
+	}
+}
+
+.add-paddingBottom {
+	padding-bottom: 50px !important;
+
+	@include breakpoint($tablet-wide-width) {
+		padding-bottom: 40px !important;
+	}
+}
+
+.nowrap {
+	white-space: normal;
+
+	@include breakpoint($tablet-wide-width) {
+		white-space: nowrap;
+	}
+}
+
+.nowrap-all { white-space: nowrap !important; }
+
+.forcewrap {
+	display: inline-block;
+
+	@include breakpoint($tablet-wide-width) {
+		display: block;
+	}
+}
+
+.forcewrap-all {
+	display: block;
+	white-space: nowrap;
+}
+
+.clear { clear: both; }
+
+.sm-txt { font-size: .7em; }
+
+.white-txt { color: $col-white; }
+
+.grey-txt { color: $col-grey; }
+
+.orange-txt { color: $col-orange; }
+
+.show-all {
+	display: block !important;
+}
+
+.show-mobileOnly {
+	display: block !important;
+	// @include breakpoint($mobile-width) {
+	// 	display: none !important;
+	// }
+	@include breakpoint($tablet-width) {
+		display: none !important;
+	}
+}
+
+.show-tablet {
+	display: none !important;
+	@include breakpoint($tablet-width) {
+		display: block !important;
+	}
+}
+
+.show-desktop {
+	display: none !important;
+	@include breakpoint($laptop-width) {
+		display: block !important;
+	}
+}

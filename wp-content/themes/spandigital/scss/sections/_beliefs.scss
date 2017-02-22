@@ -1,0 +1,84 @@
+// ***********************************
+// OUR BELIEFS SECTION
+// ***********************************
+
+body #contents section#beliefs {
+	// padding: 5rem 0 3rem;
+	padding: 5.8333rem 0 3rem;
+	@include breakpoint($tablet-width) { padding: 5rem 0 2.5rem; }
+
+	ul {
+		@extend %no-style-list;
+
+		position: relative;
+		display: block;
+		font-size: 1em;
+		margin-top: 2em;
+
+		@include breakpoint($tablet-width) {
+			display: flex;
+			flex-wrap: wrap;
+			padding: .625rem 0;
+		}
+
+		li {
+			position: relative;
+			display: inline-block;
+			width: 90%;
+			height: auto;
+			margin: 0 auto;
+			padding: 1.875rem 0 2.185rem;
+			overflow: hidden;
+			border-right: none;
+			border-bottom: 1px solid #dbdbdb;//$col-grey-xl;
+			&:last-child { border-bottom: none; }
+
+			// @include trans(.5s, height);
+
+			@include breakpoint($tablet-width) {
+				display: flex;
+				flex-direction: column;
+				width: 50%;
+				margin: 1.875rem 0;
+				padding: 0 3.5% 0 4.5%;
+				border-right: 1px solid #dbdbdb;//$col-grey-xl;
+				border-bottom: none;
+				text-align: left;
+				vertical-align: top;
+
+				&:nth-child(2n+2) { border-right: none; }
+			}
+
+			@include breakpoint($desktop-width) {
+				width: 33.3333%;
+				margin: 2.185rem 0;
+				padding: 0 3.75% 0 4.25%;
+
+				&:nth-child(2n+2) { border-right: 1px solid #dbdbdb; }//$col-grey-xl; }
+				&:nth-child(3n+3) { border-right: none; }
+			}
+
+			h5 {
+				color: $col-orange;
+				font-size: 1.5rem;
+				font-weight: 400;
+				line-height: 1.25;
+				margin-bottom: 1.5625rem;
+			}
+
+			p { margin: 0; }
+		}
+	}
+}
+
+.noTouch {
+	body #contents section#beliefs {
+
+	}
+}
+
+.noResize {
+	body #contents section#beliefs {
+
+	}
+}

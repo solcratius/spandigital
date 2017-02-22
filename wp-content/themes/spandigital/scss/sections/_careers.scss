@@ -1,0 +1,183 @@
+// ***********************************
+// CAREERS SECTION
+// ***********************************
+
+body #contents section#careers {
+	background: linear-gradient(25deg, #e43f25, $col-orange, $col-orange);//#e46d25
+	background-size: 100% 100%;
+	background-position: 0% 0%;
+
+	font-size: 1rem;
+	
+	@include breakpoint($tablet-width) {
+		padding: 5.625rem 0;
+		font-size: .7rem;
+	}
+	@include breakpoint($laptop-width) { font-size: .8rem; }
+	@include breakpoint($desktop-width) { font-size: .9rem; }
+
+	.col {
+		display: block;
+		width: 100%;
+		text-align: left;
+
+		@include breakpoint($tablet-width) {
+			display: table-cell;
+			width: 41%;
+			vertical-align: middle;
+			text-align: right;
+		}
+
+		@include breakpoint($laptop-width) { width: 39%; }
+
+		&:last-child {
+			text-align: left;
+		}
+
+		h2 {
+			display: block;
+			text-align: inherit;
+			font-size: 2.5em;
+			font-weight: 100;
+
+			@include breakpoint($tablet-width) {
+				font-size: 3.68em;
+				line-height: 1.15;
+			}
+		}
+
+		h4 {
+			display: block;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			text-align: inherit;
+			font-size: 1.5em;
+			line-height: 1.3em;
+			font-weight: 100;
+			@include breakpoint($tablet-width) {
+				margin-top: 1.05em;
+				margin-bottom: 0;
+				font-size: 2.2222em;
+			}
+		}
+
+		p {
+			display: block;
+			text-align: left;
+			// font-size: 1.375em;
+			font-size: 1.335em;
+			line-height: 1.8;
+
+			&:first-child {
+				margin-top: 0;
+				margin-bottom: 1.5em;
+			}
+		}
+
+		a.sect-btn {
+			display: inline-block;
+			padding: .75em 2.5em;
+			background: linear-gradient(35deg, #d0d0d0, #f8f8f8, #efefef);//$col-white, #eaeaea);
+			background-size: 200% 200%;
+			background-position: 0% 200%;
+			border: 1px solid rgba(0,0,0,0.1);
+			// box-shadow: 1px 1px 2px 0 rgba(0,0,0,.5);
+			font-size: 1.125em;
+			font-weight: 400;
+			text-transform: uppercase;
+			color: $col-grey;
+
+			// box-shadow: inset 0 3px 5px rgba(255,255,255,0.5), 0 2px 2px rgba(0,0,0,0.25), 2px 1px 2px rgba(0,0,0,0.15);
+			box-shadow: inset 0 2px 1px rgba(255,255,255,0.5), inset 0 10px 7px rgba(175,175,175,0.35), 0 2px 2px rgba(0,0,0,0.1), 2px 1px 5px rgba(0,0,0,0.15);
+		}
+
+		p.job-opening-label {
+			font-family: $font-serif;
+			font-size: 1.5em;
+			letter-spacing: .25pt;
+			margin-top: 2em;
+			margin-bottom: 0;
+			@include breakpoint($tablet-width) { margin-top: 1em; }
+		}
+
+		a.job-opening-btn, a.job-opening-btn:visited {
+			// font-size: 1.375em;
+			font-size: 1.335em;
+			font-weight: 300;
+			text-decoration: underline;
+			color: $col-white;
+		}
+	}
+
+	.divider {
+		display: none;
+
+		@include breakpoint($tablet-width) {
+			display: table-cell;
+			width: 18%;
+			vertical-align: middle;
+
+			&:before {
+				position: absolute;
+				content: " ";
+				width: 120px;
+				height: 1px;
+				margin-left: -60px;
+				background-color: $col-white;
+				transform: rotate(-62deg);
+				// transform: rotate(-60deg);
+			}
+		}
+
+		@include breakpoint($tablet-wide-width) {
+			width: 18%;
+
+			&:before {
+				width: 240px;
+				margin-left: -120px;
+			}
+		}
+
+		@include breakpoint($laptop-width) {
+			width: 22%;
+
+			&:before {
+				// width: 360px;
+				// margin-left: -175px;//-180px;
+				width: 330px;
+				margin-left: -165px;
+			}
+		}
+
+		@include breakpoint($desktop-width) {
+			&:before {
+				width: 360px;
+				margin-left: -180px;
+				margin-top: 2px;
+			}
+		}
+
+		@include breakpoint($wide-width) {
+			&:before {
+				width: 400px;
+				margin-left: -200px;
+			}
+		}
+	}
+}
+
+.noTouch {
+	body #contents section#careers {
+		a.sect-btn { @include trans(.25s, background-position, ease-in-out, 0s, .25s, color, ease-in-out, 0s); }
+		a.sect-btn:hover {
+			background-position: 95% 200%;
+			color: $col-grey-d;
+		}
+
+		a.job-opening-btn:hover { opacity: .65; }
+	}
+}
+
+.noResize {
+
+}

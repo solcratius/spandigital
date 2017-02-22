@@ -1,0 +1,266 @@
+// ***********************************
+// CURRENT OPENING SECTION
+// ***********************************
+
+body #contents section#openings {
+	padding: 5rem 0 3rem;
+	@include breakpoint($tablet-width) { padding: 4.375rem 0; }
+
+	.box {
+		position: relative;
+		margin-top: 6rem;
+
+		@include breakpoint($tablet-width) {
+			margin-top: 5rem;
+			padding: 0 10px;
+		}
+
+		.job-nav {
+			position: absolute;
+			background-color: $col-grey;
+			width: 100%;
+			top: -34px;
+			left: 0;
+			margin: 0;
+			padding: 0;
+			z-index: 500;
+
+			@include breakpoint($tablet-width) {
+				width: 600px;
+				left: 50%;
+				margin-left: -300px;
+				padding: 0 30px;
+			}
+
+			a {
+				position: relative;
+				display: inline-block;
+				width: 50%;
+				font-size: 1.125rem;
+				font-weight: 400;
+				text-transform: uppercase;
+				text-align: center;
+				white-space: nowrap;
+				padding: 1.25rem 0;
+
+				@include trans(.15s, color);
+			}
+
+			a, a:visited {
+				color: $col-white;
+				text-decoration: none;
+			}
+
+			span.active-bar {
+				position: absolute;
+				display: block;
+				width: 130px;
+				height: 7px;
+				bottom: 0;
+				left: 50%;
+				margin-left: -65px;
+				background-color: $col-orange;
+
+				@include breakpoint($tablet-width) {
+					width: 200px;
+					margin-left: -100px;
+				}
+			}
+		}
+
+		&.jobs-sf .job-nav span.active-bar {
+			left: 25%;
+			@include breakpoint($tablet-width) { left: 165px; }
+		}
+		&.jobs-cpt .job-nav span.active-bar {
+			left: 75%;
+			@include breakpoint($tablet-width) { left: 435px; }
+		}
+		&.jobs-sf ul.sf { display: block; }
+		&.jobs-cpt ul.cpt { display: block; }
+	}
+
+	ul.sf, ul.cpt {
+		@extend %no-style-list;
+
+		position: relative;
+		background-color: $col-white;
+		display: none;
+		font-size: 1em;
+		padding: 2rem 0 .625rem;
+
+		@include breakpoint($tablet-width) {
+			padding: 3rem 1.5625rem 1.375rem;
+		}
+
+		li {
+			position: relative;
+			display: block;
+			height: auto;
+			padding: 1.25rem 2.5rem;
+			border-bottom: 1px solid #dbdbdb;//$col-grey-xl;
+			text-align: left;
+			float: none;
+
+			@include breakpoint($tablet-width) {
+				width: 46%;
+				margin: 0 2%;
+				padding: 1.5625rem 2.25%;
+				float: left;
+			}
+
+			@include breakpoint($desktop-width) { width: 29.3333%; }
+
+			a {
+				font-size: 1.375rem;
+				font-weight: 300;
+				@include trans(.15s, color);
+			}
+
+			a, a:visited {
+				color: $col-grey;
+				text-decoration: none;
+			}
+		}
+
+		@media screen and (max-width : 639px) {
+			li:last-child { border-bottom: none; }
+		}
+
+		@media screen and (min-width : 640px) and (max-width : 1023px) {
+			li:nth-child(2n):nth-last-child(-n+3) ~ li { border-bottom: none; }
+		}
+
+		@include breakpoint($desktop-width) {
+			li:nth-child(3n):nth-last-child(-n+4) ~ li { border-bottom: none; }
+		}
+	}
+}
+
+#modal-layer {
+	.jobs-content {
+		position: relative;
+		width: 85%;
+		height: auto;
+		padding: 3.75rem .625rem;// 1.875rem;
+		text-align: left;
+
+		&.preload {
+			width: 100%;
+			height: calc(100vh - 50px);
+
+			@include breakpoint($tablet-width) {
+				height: calc(100vh - 80px);
+			}
+
+			&:after {
+				position: absolute;
+				content: " ";
+				background: url("images/preloader.gif") no-repeat left top;
+				width: 54px;
+				height: 55px;
+				top: 50%;
+				left: 50%;
+				margin-top: -60px;
+				margin-left: -27px;
+			}
+		}
+
+		h5 {
+			font-size: 1.375rem;
+			font-weight: 400;
+			color: $col-orange;
+			margin-bottom: .375rem;
+		}
+
+		h6 {
+			font-family: $font-serif;
+			font-size: 1.25rem;
+			letter-spacing: .5pt;
+			color: $col-grey-l;
+			margin-bottom: 1.5625rem;
+		}
+
+		span.label {
+			display: block;
+			font-size: .875rem;
+			font-weight: 400;
+			color: $col-grey;
+			margin: 1.5625rem 0 1.125rem;
+		}
+
+		p {
+			font-size: .875rem;
+			line-height: 1.6;
+		}
+
+		ul {
+			@extend %no-style-list;
+
+			li {
+				margin: 1rem 0;
+				font-size: .875rem;
+			}
+		}
+
+		a, a:visited {
+			font-weight: 300;
+			color: $col-orange;
+			text-decoration: none;
+		}
+
+		a.apply-btn {
+			position: relative;
+			display: inline-block;
+			padding: .875rem 3.125rem;
+			margin: 1.25rem 0;
+			font-size: 1.125rem;
+			font-weight: 400;
+			text-transform: uppercase;
+			text-decoration: none;
+			color: $col-white;
+			border: 1px solid rgba(0,0,0,0.15);
+			background: linear-gradient(35deg, #df6900, #d86b0a, $col-orange);
+			background-size: 200% 200%;
+			background-position: 100% 200%;
+			box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 1px rgba(0,0,0,0.5), 2px 1px 1px rgba(0,0,0,0.2);
+
+			&:visited {
+				text-decoration: none;
+				color: $col-white;
+			}
+		}
+	}
+}
+
+.noTouch {
+	body #contents section#openings {
+		.box .job-nav a:hover {
+			color: $col-orange;
+		}
+
+		.box ul li a:hover { color: $col-orange; }
+	}
+
+	#modal-layer .jobs-content {
+		a:hover {
+			opacity: .5;
+		}
+
+		a.apply-btn {
+			@include trans(.25s, background-position);
+			&:hover {
+				opacity: 1;
+				background-position: 0% 200%;
+			}
+		}
+	}
+}
+
+.noResize {
+	body #contents section#openings {
+		.box .job-nav span.active-bar {
+			@include trans(.35s, left, cubic-bezier(.75,0,.25,1));
+		}
+	}
+}

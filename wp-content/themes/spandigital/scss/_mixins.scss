@@ -1,0 +1,53 @@
+// ***********************************
+// MIXINS
+// ***********************************
+
+@mixin trans($time:null, $prop:all, $ease:ease-in-out, $delay:0s, $time2:null, $prop2:all, $ease2:ease-in-out, $delay2:0s, $time3:null, $prop3:all, $ease3:ease-in-out, $delay3:0s) {
+	// -webkit-transition: $prop $time $ease $delay;
+	// -moz-transition: $prop $time $ease $delay;
+	// -ms-transition: $prop $time $ease $delay;
+	// -o-transition: $prop $time $ease $delay;
+	// transition: $prop $time $ease $delay;
+
+  
+  @if $time3
+  {
+    transition: $prop $time $ease $delay, $prop2 $time2 $ease2 $delay2, $prop3 $time3 $ease3 $delay3;
+  }
+  @else if $time2
+  {
+    transition: $prop $time $ease $delay, $prop2 $time2 $ease2 $delay2;
+  }
+  @else
+  {
+    transition: $prop $time $ease $delay;
+  }
+}
+
+
+/*
+$width:auto;
+@mixin clearfix($width) {
+
+   @if $width == 'auto' {
+
+    // if width is not passed, or empty do this
+
+   } @else {
+        display: inline-block;
+        width: $width;
+   }
+}
+*/
+
+
+// @mixin stylize-header($theme, $color) {
+//   $primary: $color;
+//   $secondary: darken($color, 20%);
+
+//   body.#{$theme} #header {
+    
+//   }
+// }
+
+

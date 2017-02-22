@@ -1,0 +1,446 @@
+// ***********************************
+// HEADER
+// ***********************************
+
+// @each $theme, $color in $themes {
+// 	@include stylize-header($theme, $color);
+// }
+
+body #header {
+	position: fixed;
+	background: transparent;
+	width: 100%;
+	// height: 50px;
+	height: 60px;
+	top: 0;
+	left: 0;
+	padding: 0;
+	z-index: 100000;
+	overflow: hidden;
+
+	@include breakpoint($tablet-width) {
+	    height: 100px;
+	}
+
+	a {
+		color: $col-grey-l;
+		text-decoration: none;
+
+		&:hover { text-decoration: none; }
+		&:visited { color: $col-grey-l; }
+		&:active { color: $col-orange; }
+	}
+
+	.masthead {
+		display: block;
+		position: relative;
+		// height: 50px;
+		height: 60px;
+		margin: 0;
+		// padding: 0;
+		padding: 4px 0 0;
+		text-align: left;
+		border: none;
+		background: $col-white;
+		overflow: hidden;
+		
+		@include breakpoint($tablet-width) {
+			height: 100px;
+		    padding: 10px 0;
+		}
+
+		a.logo-container {
+			position: relative;
+			display: inline-block;
+			overflow: hidden;
+			padding: 15px 17px;
+			line-height: 0;
+			z-index: 500;
+
+			@include breakpoint($tablet-width) {
+			    padding: 20px 50px 18px;
+			}
+
+			h1 {
+				margin: 0;
+				line-height: 0;
+				content: " ";
+				font: 0/0 a;
+			    color: #e69224;
+			    text-transform: uppercase;
+			    outline: 0;
+
+			    &.white {
+			    	color: #ffffff;
+			    }
+
+			    span { display: none; }
+			}
+		}
+	}
+
+	.menu-container {
+		display: block;
+		position: absolute;
+		width: 100%;
+		min-width: 320px;
+		height: 100%;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		left: calc(100% - 61px); 
+		margin: 0;
+		padding: 0;
+		text-align: left;
+		border: none;
+		background: transparent;
+		z-index: 1000;
+
+		@include breakpoint($mobile-width) {
+			width: 70%;
+			min-width: 294px;
+		}
+
+		@include breakpoint($tablet-width) {
+			width: 62%;
+			min-width: 396px;
+		    left: calc(100% - 110px); 
+		}
+
+		@include breakpoint($laptop-width) {
+			width: 50%;
+			min-width: 460px;
+		}
+
+		a#nav-toggle {
+			position: inherit;
+			// top: 12px;
+			top: 17px;
+			left: 13px;
+			width: 35px;
+			height: 25px;
+			margin: 0;
+			opacity: 1;
+			z-index: 5000;
+
+			div {
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				width: 25px;
+				height: 3px;
+				background: $col-grey-l;
+				opacity: 1;
+				
+				&:nth-child(2) { top: 11px; }
+				&:last-child { top: 17px; }
+			}
+
+			@include breakpoint($tablet-width) {
+			    top: 30px;
+			    left: 30px;
+			    width: 33px;
+			    height: 20px;
+			    padding: 20px;
+
+			    div {
+					top: 10px;
+					width: 33px;
+					height: 4px;
+					
+					&:nth-child(2) { top: 18px; }
+					&:last-child { top: 26px; }
+				}
+			}
+		}
+
+		a#nav-close {
+			position: inherit;
+			// top: 9px;
+			top: 14px;
+			right: 18px;
+			width: 30px;
+			height: 30px;
+			padding: 0;
+			margin: 0;
+			opacity: 1;
+			overflow: auto;
+			z-index: 4000;
+			
+			@include breakpoint($tablet-width) {
+			    top: 35px;
+			    right: 30px;
+			}
+
+			div {
+				position: absolute;
+				top: 14px;
+				left: 0;
+				width: 32px;
+				height: 1px;
+				background: $col-white;
+				opacity: 1;
+				transform: rotate(45deg);
+
+				&:last-child { transform: rotate(-45deg); }
+			}
+		}
+
+		.navigation {
+			display: block;
+			padding: 100px 18px 50px;
+			margin: 0;
+			// height: calc(100% - 150px);
+
+			@include breakpoint($tablet-width) {
+				padding: 150px 35px 50px;
+			    // height: calc(100% - 200px);
+			}
+
+			@include breakpoint($laptop-width) {
+				padding: 150px 90px 50px;
+			}
+
+			ul { @extend %no-style-list; }
+
+			li {
+				display: block;
+				padding: .25rem 0;
+
+				a {
+					display: inline-block;
+					font-family: $font-sans;
+					font-size: 1rem;
+					font-weight: 300;
+					line-height: 1.5rem;
+					letter-spacing: 1pt;
+					color: $col-white;
+					padding: .5rem 0;
+					text-transform: uppercase;
+
+					&:after {
+						display: block;
+						content: '';
+						border-bottom: 1px solid $col-white;
+						padding-bottom: .25rem;
+						transform: scaleX(0);
+						transform-origin:  0% 50%;
+					}
+
+					// @include breakpoint($mobile-width) {
+					//     font-size: 1.25rem;
+					//     padding: 1rem 0;
+					// }
+					
+					font-size: 1.25rem;
+					padding: 1rem 0;
+				}
+
+				a:hover:after {
+					transform: scaleX(1);
+				}
+
+				a:active {
+					color: $col-orange;
+					&:after {
+						border-bottom-color: $col-orange;
+					}
+				}
+
+				&.page-menu {
+					border-top: 1px solid $col-white;
+					padding-top: 1.65rem;
+					margin-top: 1.25rem;
+				}
+			}
+			
+		}
+	}
+
+	&.orange-bg {
+		// height: 60px;
+		// @include breakpoint($tablet-width) { height: 100px; }
+		
+		a {
+			color: $col-white;
+			text-decoration: none;
+
+			&:hover { text-decoration: none; }
+			&:visited { color: $col-white; }
+			&:active { color: $col-orange; }
+		}
+
+		.masthead {
+			// height: 60px;
+			// padding: 4px 0 0;
+			background: transparent;
+
+			@include breakpoint($tablet-width) {
+				// height: 100px;
+			    padding: 20px 0 0;
+			}
+		}
+
+		.menu-container {
+			a#nav-toggle {
+				top: 17px;
+				@include breakpoint($tablet-width) { top: 40px; }
+
+				div { background: $col-white; }
+			}
+
+			a#nav-close {
+				// top: 14px;
+				@include breakpoint($tablet-width) { top: 45px; }
+			}
+		}
+	}
+
+	&.sticky-nav {
+		height: 50px;
+		@include breakpoint($tablet-width) { height: 80px; }
+
+		.masthead {
+			background: $col-grey;
+			border-bottom: 1px solid #4f4f4f;
+		}
+
+		// &.on {
+		// 	.menu-container {
+		// 		border-left: 1px solid darken( $col-grey, 5% );
+		// 	}
+		// }
+	}
+}
+
+// body.sticky-init #header.orange-bg {
+body.sticky-init #header {
+	.masthead {
+		height: 50px;
+		padding: 0;
+
+		@include breakpoint($tablet-width) { height: 80px; }
+	}
+
+	.menu-container {
+		a#nav-toggle {
+			top: 12px;
+			// div { background: $col-white; }
+		}
+		a#nav-close { top: 10px; }//9px; }
+
+		@include breakpoint($tablet-width) {
+		    a#nav-toggle { top: 20px; }
+			a#nav-close { top: 25px; }
+		}
+	}
+
+	&.sticky-nav .menu-container a#nav-toggle div { background: $col-white; }
+}
+
+body.nav-on {
+	// overflow: hidden;
+
+	#header {
+		height: 100%;
+		// overflow: auto;
+		// overflow-x: hidden;
+		transition: none;
+		overflow: hidden;
+
+		// overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+
+		.menu-container {
+			background: $col-grey;
+			opacity: 1;
+
+			.navigation { background: $col-grey; }
+		}
+
+		&.sticky-nav {
+			.menu-container {
+				border-left: 1px solid darken( $col-grey, 5% );
+			}
+		}
+	}
+}
+
+body.nav-open {
+	overflow: hidden;
+	// position: fixed;
+	// overflow-y: scroll;
+
+	#header {
+		.menu-container {
+			left: 0;
+			@include breakpoint($mobile-width) { left: 30%; }
+			@include breakpoint($tablet-width) { left: 38%; }
+			@include breakpoint($laptop-width) { left: 50%; }
+
+			a#nav-toggle div { background: $col-white; }
+		}
+
+		&.on {
+			overflow: auto;
+			overflow-x: hidden;
+			transition: none;
+			// overflow-y: scroll;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+}
+
+.noTouch {
+	body #header {
+		.menu-container {
+			a#nav-toggle:hover, a#nav-close:hover {
+				opacity: .5;
+			}
+
+			.navigation li a:after {
+				@include trans(.35s, transform, ease-in-out);
+			}
+		}
+	}
+}
+
+.noResize {
+	body #header {
+		&.sticky-nav { @include trans(.25s, height, ease-in-out); }
+
+		.masthead {
+			@include trans(.25s, padding, ease-in-out);
+			// @include trans(.25s, all, ease-in-out);
+		}
+
+		.menu-container {
+			@include trans(.25s, left, cubic-bezier(.75,.01,.25,.75));
+
+			@include breakpoint($tablet-width) {
+				// @include trans(.5s, left, cubic-bezier(.75,.01,.25,.75));
+				@include trans(.5s, left, cubic-bezier(.75,.01,.5,.25));
+			}
+
+			a#nav-toggle, a#nav-close {
+				@include trans(.25s, top, ease-in-out);
+			}
+		}
+	}
+
+	body.nav-open #header .menu-container {
+		@include breakpoint($tablet-width) {
+			@include trans(.5s, left, cubic-bezier(.75,.01,.25,.75));
+		}
+	}
+
+	body.nav-on #header {
+		transition: none;
+	}
+
+	// body.nav-open #header {
+	// 	.menu-container {
+	// 		@include trans(.5s, left, cubic-bezier(.75,.01,.25,.75));
+	// 	}
+	// }
+}
