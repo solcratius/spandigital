@@ -31,20 +31,34 @@
     this.ctx = parent.ctx;
     this.particleColor = parent.options.particleColor;
 
-    this.x = Math.random() * this.canvas.width;
-    this.y = Math.random() * this.canvas.height;
+    // this.x = Math.random() * this.canvas.width;
+    // this.y = Math.random() * this.canvas.height;
+    // this.x = (Math.random() * 1.5) * this.canvas.width;
+    // this.y = (Math.random() * 1.5) * this.canvas.height;
+    this.x = (Math.random() * 1.5 - .25) * this.canvas.width;
+    // this.x = (Math.random() * 1.5 - .25) * (this.canvas.width * .5);
+    this.y = (Math.random() * 1.5 - .25) * this.canvas.height;
     this.velocity = {
-      x: (Math.random() - 0.5) * parent.options.velocity,
-      y: (Math.random() - 0.5) * parent.options.velocity
+      // x: (Math.random() - 0.5) * parent.options.velocity,
+      // y: (Math.random() - 0.5) * parent.options.velocity
+      x: (Math.random() - 0.15) * parent.options.velocity,
+      y: (Math.random() - 0.15) * parent.options.velocity
     };
   };
   Particle.prototype.update = function () {
 
     // Change dir if outside map
-    if (this.x > this.canvas.width + 20 || this.x < -20) {
+    // if (this.x > this.canvas.width + 20 || this.x < -20) {
+    //   this.velocity.x = -this.velocity.x;
+    // }
+    // if (this.y > this.canvas.height + 20 || this.y < -20) {
+    //   this.velocity.y = -this.velocity.y;
+    // }
+
+    if (this.x > this.canvas.width + 100 || this.x < -100) {
       this.velocity.x = -this.velocity.x;
     }
-    if (this.y > this.canvas.height + 20 || this.y < -20) {
+    if (this.y > this.canvas.height + 100 || this.y < -100) {
       this.velocity.y = -this.velocity.y;
     }
 
@@ -58,7 +72,8 @@
     this.ctx.beginPath();
     this.ctx.fillStyle = this.particleColor;
     this.ctx.globalAlpha = 0.7;
-    this.ctx.arc(this.x, this.y, 1.5, 0, 2 * Math.PI);
+    // this.ctx.arc(this.x, this.y, 1.5, 0, 2 * Math.PI);
+    this.ctx.arc(this.x, this.y, 2, 0, 2.67 * Math.PI);
     this.ctx.fill();
   };
 

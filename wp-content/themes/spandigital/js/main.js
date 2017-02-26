@@ -209,7 +209,28 @@ SPANDIGITAL.main = (function($) {
 		navH: 0,
 		init: function() {
 			this.hero_set();
-			if (pageType == "home") this.landingAnim();
+
+			if (pageType == "home")
+			{
+				var landingID = 1;
+
+				$('header h1').on('click', function(e) {
+					e.preventDefault();
+			    	e.stopPropagation();
+
+			    	if (landingID < 4)
+			    	{
+			    		landingID ++;
+			    		p_main.landingAnim(landingID);
+			    	}
+			    	else
+			    	{
+			    		$('header h1').off('click');
+			    	}
+				});
+
+				this.landingAnim(landingID);
+			}
 		},
 		hero_set: function() {
 			if (pageType == "home")
@@ -226,49 +247,37 @@ SPANDIGITAL.main = (function($) {
 
 			// console.log("heroH:" + this.heroH);
 		},
-		landingAnim: function() {
-			var randNum = getRandomNum(0, 10);
+		landingAnim: function(randNum) {
+			// var randNum = getRandomNum(0, 10);
 			console.log("hero option: "+ randNum);
+			$HERO.find('.canvas').removeClass('shimmer-anim');
+			$HERO.find('.canvas').removeClass('circle-anim');
+			$HERO.find('.canvas').removeClass('network-anim');
 
-			if (randNum < 1)
+			if (randNum == 1)
 			{
 				$HERO.find('.canvas').addClass('shimmer-anim');
 			}
-			else if (randNum >= 1 && randNum < 4)
-			{
-				$HERO.find('.canvas').addClass('line-anim');
-				p_main.particle_lines();
-			}
-			else if (randNum >= 4 && randNum < 7)
+			else if (randNum == 2)
 			{
 				$HERO.find('.canvas').addClass('circle-anim');
 				p_main.particle_circles();
 			}
+			else if (randNum == 3)
+			{
+				// $HERO.find('.canvas').addClass('network-anim');
+				p_main.particle_network();
+			}
 			else
 			{
 				$HERO.find('.canvas').addClass('network-anim');
-				p_main.particle_network();
+				p_main.particle_network_dark();
 			}
-			// else
-			// {
-			// 	p_main.particle_node();
-			// }
-		},
-		particle_lines: function() {
-			$.each($HERO.find(".canvas"), function() {
-				var $THIS = $(this),
-					vertical_length = ($THIS.height() / 50) * 10;
-				
-				for (var i = 0; i <= vertical_length; i ++)
-				{
-					$THIS.append('<span class="particle" style="top:' + getRandomNum(-30, 30) + '%; left:' + getRandomNum(-10, 110) + '%; width:' + getRandomNum(1,5) + 'px; height:' + getRandomNum(20,80) + '%; animation-delay: -' + (getRandomNum(0,30)/10) + 's;"></span>');
-				}
-			});
 		},
 		particle_circles: function() {
 			$.each($HERO.find(".canvas"), function() {
 				var $THIS = $(this),
-					firecount = ($THIS.width() / 50) * 20;
+					firecount = ($THIS.width() / 50) * 30;
 
 				for (var i = 0; i <= firecount; i ++)
 				{
@@ -280,11 +289,22 @@ SPANDIGITAL.main = (function($) {
 		particle_network: function() {
 			var canvasDiv = document.getElementById('canvas');
 			var options = {
-				particleColor: '#fff',
+				particleColor: '#e69224',
 				background: 'wp-content/themes/spandigital/images/hero-gradient.png',
-				interactive: false,
+				// background: '#e69224',
+				interactive: true,
 				speed: 'fast',
-				density: 'high'
+				density: 750
+			};
+			var particleCanvas = new ParticleNetwork(canvasDiv, options);
+		},
+		particle_network_dark: function() {
+			var canvasDiv = document.getElementById('canvas');
+			var options = {
+				particleColor: '#e69224',
+				interactive: true,
+				speed: 'fast',
+				density: 750
 			};
 			var particleCanvas = new ParticleNetwork(canvasDiv, options);
 		}
