@@ -25,7 +25,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', 'gAsef4=DREgu');
 
 /** MySQL hostname */
-define('DB_HOST', 'http://ec2-54-173-39-224.compute-1.amazonaws.com/');
+define('DB_HOST', $_ENV{DATABASE_SERVER});
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
