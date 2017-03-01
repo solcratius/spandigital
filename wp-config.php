@@ -22,7 +22,7 @@ define('DB_NAME', 'span_digital');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'gAsef4=DREgu');
+define('DB_PASSWORD', 'Titpfm!');
 
 /** MySQL hostname */
 define('DB_HOST', $_ENV{DATABASE_SERVER});
