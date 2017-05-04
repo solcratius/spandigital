@@ -572,6 +572,16 @@ ul li {
   list-style: inside;
 }
 
+ul.bullet {
+  list-style-type: disc !important;
+  list-style-position: inside !important;
+  margin-left: 18px !important;
+}
+
+ul.bullet li {
+  list-style: outside !important;
+}
+
 .slick-slider ul.slick-dots, body #header .menu-container .navigation ul, #footer ul, body #contents section#capabilities ul, body #contents section#work ul, body #contents section#beliefs ul, body #contents section#openings ul.sf, body #contents section#openings ul.cpt, #modal-layer .jobs-content ul, body #contents.case-study section.case-highlights .col ul, body #contents.case-study section.case-body .col ul, body #contents.case-study section.case-results .col ul, body #contents.case-study section.case-studies ul {
   list-style: none;
   margin: 0;
@@ -1572,8 +1582,8 @@ body #contents.home section.hero .canvas {
     -moz-background-size: 1200% 100%;
     background-size: 1200% 100%;
     background-position: 0% 0%;
-    -moz-animation: Gradient 10s ease-in-out;
-    animation: Gradient 10s ease-in-out;
+    -moz-animation: Gradient 15s;
+    animation: Gradient 15s;
   }
 }
 
@@ -1637,7 +1647,7 @@ body #contents.home section.hero .canvas {
   }
   body #contents.home section.hero .canvas.circle-anim > .particle {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(228, 109, 37, 0.25);
     -moz-border-radius: 50px;
     border-radius: 50px;
     -moz-animation: circle 2.5s linear infinite;
